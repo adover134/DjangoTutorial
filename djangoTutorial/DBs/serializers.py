@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from DBs.models import Person, Car
+from DBs.models import Person, Car, User
 
 
 class PersonSerializer(serializers.ModelSerializer):
@@ -14,4 +14,10 @@ class PersonSerializer(serializers.ModelSerializer):
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
+        fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
         fields = '__all__'

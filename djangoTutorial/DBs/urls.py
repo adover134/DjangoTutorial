@@ -6,6 +6,7 @@ from DBs import views
 router = routers.SimpleRouter()
 router.register('person', views.PersonViewSets)
 router.register('car', views.CarViewSets)
+router.register('user', views.UserViewSets)
 urlpatterns = [
 ]
 
