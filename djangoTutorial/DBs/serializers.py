@@ -4,10 +4,7 @@ from DBs.models import Person, Car
 
 class PersonSerializer(serializers.ModelSerializer):
 
-    owned = serializers.HyperlinkedRelatedField(
-        read_only=True,
-        view_name='car-detail'
-    )
+    owned_car_name = serializers.CharField(source='owned.name', read_only=True)
 
     class Meta:
         model = Person
