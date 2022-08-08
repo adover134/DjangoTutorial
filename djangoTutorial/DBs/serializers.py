@@ -4,7 +4,7 @@ from DBs.models import Person, Car
 
 class PersonSerializer(serializers.ModelSerializer):
 
-    owned_car_name = serializers.CharField(source='owned.name', read_only=True)
+    owned = serializers.SlugRelatedField(read_only=True, slug_field='name')
 
     class Meta:
         model = Person
