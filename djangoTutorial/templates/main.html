@@ -1,0 +1,17 @@
+{% load custom_filters static %}
+{% url 'main' as main %}
+{% url 'logout' as logout %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="oh">
+{% if user and not user.is_anonymous %}
+    <a type="button" href = '{{logout}}'>logout</a>
+{% else %}
+    <a type="button" href="{% url 'social:begin' 'kakao' %}?next={{ main }}">카카오 로그인</a>
+{% endif %}
+</body>
+</html>
