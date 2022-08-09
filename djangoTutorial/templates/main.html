@@ -1,4 +1,4 @@
-{% load custom_filters static %}
+{% load static %}
 {% url 'main' as main %}
 {% url 'logout' as logout %}
 <!DOCTYPE html>
@@ -13,5 +13,8 @@
 {% else %}
     <a type="button" href="{% url 'social:begin' 'kakao' %}?next={{ main }}">카카오 로그인</a>
 {% endif %}
+<div style="width:500px; height:500px; border:1px solid black;">
+    {% include 'test.html' %}
+</div>
 </body>
 </html>
