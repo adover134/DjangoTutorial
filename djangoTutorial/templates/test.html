@@ -1,1 +1,7 @@
-hey!!!
+{% url 'upload' as upload %}
+
+<form action="{{upload}}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{testForm}}
+    <input type="submit" value="폼 전송">
+</form>

@@ -24,5 +24,6 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('admin/', admin.site.urls),
     path('db/', include('DBs.urls')),
-    path('test/', views.test),
+    path('test/', views.test, name='test'),
+    path('upload/', views.upload_test, name='upload'),
 ]
