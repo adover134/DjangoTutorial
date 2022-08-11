@@ -23,9 +23,12 @@ def test(request):
 
 
 def upload_test(request):
-    images = request.FILES.getlist('test4')
-    for image in images:
-        handle_uploaded_file(image, str(image))
+    if request.method == 'POST':
+        form = TestForm(request.POST, request.FILES)
+        if form.is_valid():
+            images = request.FILES.getlist('test4')
+            for image in images:
+                handle_uploaded_file(image, str(image))
     return redirect('test')
 
 
